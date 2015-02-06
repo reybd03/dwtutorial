@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Scripts</title>
+<link href="css/Final.css" rel="stylesheet" type="text/css">
+<!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
+ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
+</style>
+<![endif]-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/menu.js"></script>
+<script type="text/javascript" src="scripts/back2top.js"></script>
+</head>
+
+<body>
+<div class="container">
+	<div class="header">
+    <p class="Main_title">Dreamweaver Tutorial</p>
+    <a href=""><img src="img/DW-CS6.gif" alt="Dreaweaver Logo" name="Insert_logo" width="16%" height="90" id="Main_logo" style="background-color: #8090AB; display:block;" /></a>
+    <div id="menu-container">
+    	<ul id="navigationMenu">
+        	<li><a href="Final.html" class="normalMenu">Home</a></li>
+            <li><a href="HTML.html" class="normalMenu">HTML</a></li>
+            <li><a href="CSS.html" class="normalMenu">CSS</a></li>
+            <li><a href="Scripts.html" class="selectedMenu">The Scripts</a></li>
+      </ul>
+    </div>
+    </div>
+     <div class="sidebar1">
+   <ul class="nav">
+      <li><a href="#"><strong>So Scripts?</strong>
+      	<span>&rarr; Scripting tags are used to define client-side scripts, such as Javascript, including image manipulation, form validation, and dynamic changes of content. </span></a></li>
+        <li><a href="#"><strong>Javascript</strong>
+      	<span>&rarr; Javascript is the scripting language of the Web, and is used in billions of web pages.  It is a lightweight programming language that can be inserted into HTML pages. </span></a></li>
+      <li class="nav2"><a href="#"><strong>JQuery</strong>
+      	<span>&rarr; JQuery is a "write less, do more" JavaScript library, and takes a lot of common tasks that requires many lines of Js code to accomplish, and wraps it into methods that you can call with a single line of code.  It also simplifies other things such as AJAX calls and DOM manipulation.</span></a></li>
+      <li><a href="#"><strong>Plug-ins</strong>
+      	<span>&rarr; Plugins allows people to make the most out of the library and abstract the most clever and useful functions out into reusable code that can save time and make development even more effecient. </span></a></li>
+    </ul>
+   
+    <!-- end .sidebar1 --></div>
+  <div class="content">
+  <h1>Scripting in an HTML doc </h1>
+   <p>The last thing we'll cover is adding some scripts to the page, thus giving our web site some added features.  First, I'll go over a bit of coding that was used in this tutorial, then we'll add it and another script to our Sample file. Before we can do that, however, go ahead and copy and paste the following code to the head of your page so that all of scripts we create can be rendered properly:
+   </p>  
+   <div id="htmlCode"><pre><code>&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"&gt;
+   &lt;/script&gt;</code></pre>
+   </div>
+   <h2 id="Script1">Back to the Top</h2>
+   <p>For the Jquery code used to bring the user back to the top of the page, we'll create a Javascript file named back2top, and call it from the HTML page.
+   </p>
+   <p>To begin, go to File | New, then select Javascript file. Once created, add the following lines to it:
+   </p>
+   <div id="htmlCode">
+   <p><pre><code>
+   $(function() {
+	$(window).scroll(function() {
+		if($(this).scrollTop() != 0) {
+			$('#toTop').fadeIn();	
+		} else {
+			$('#toTop').fadeOut();
+		}
+	});
+ 
+	$('#toTop').click(function() {
+		$('body,html').animate({scrollTop:0},800);
+	});
+    return this	
+	})
+</code></pre></p>
+</div>
+<p>After that, include the script source to the head and the div element to the bottom of the page and input the text below inside the div tags:
+</p>
+<div id="htmlCode">
+<p>Script Source<pre><code>
+	&lt;script src="some.js" type="text/javascript"&gt;&lt;/script&gt;
+</code></pre></p>
+<p>Near the bottom of the page<pre><code>
+	&lt;div id="toTop"&gt;^ Back to Top&lt;/div&gt;
+    </code></pre></p></div>
+    <p id="Script2">Once done, you should have some text floating when a user scrolls down, in which the function will scroll up to the top of the page. Remember to add some CSS to style it to fit the page.  </p>
+    <h2>Adding Content to the Page</h2>
+    <p>Next, let's add some more text to the content using the onload function, planting it inside the body tag.  </p>
+    <div id="htmlCode">
+    <p><pre><code>
+    &lt;body onLoad="appendText()">
+    </code></pre></p>
+    <p>
+    Afterwords, open up the Some.js file and include this after the back2top function:
+    </p>
+    <div id="htmlCode">
+    <p><pre><code>
+	function appendText()
+	{
+	var txt1= $("&lt;p&gt;&lt;/p&gt;").text("This is some text that is 
+        	generated through JQuery, using the onLoad object.");
+            
+	var txt2= $("&lt;p&gt;&lt;/p&gt;").text("Don't forget to scroll down 
+   		so that you can see the Back2Top script in action.");
+            
+	$(".content").append(txt1,txt2);
+
+	return this;
+	}
+
+    </code></pre></p>
+    </div>
+    <div>
+    <h3>Fin</h3>
+    <p>The outcome after all that hard work is a fully functional page that has HTML, CSS and some scripts in it. The final product should look similar to <a href="sample.html" target="_blank">this</a>.</p>
+    </div>
+    <!-- end .content --></div>
+    
+  
+  <!-- end .container --></div>
+  <div id="toTop">^ Back to Top</div>
+    <div class="footer">
+    <p><a href="Dreamweaver.html">Dreamweaver CS 6</a> | <a href="About.html">About</a> | <a href="Sources.html">Extras</a> | <a href="Site_map.html">Site Map</a></p>
+    <!-- end .footer --></div>
+</div>
+</body>
+</html>

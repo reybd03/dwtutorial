@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML</title>
+<link href="css/Final.css" rel="stylesheet" type="text/css"><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
+ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
+</style>
+<![endif]-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="scripts/menu.js"></script>
+<script type="text/javascript" src="scripts/back2top.js"></script>
+
+
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"> <p class="Main_title">Dreamweaver Tutorial</p>
+  <a href=""><img src="img/DW-CS6.gif" alt="Dreaweaver Logo" name="Insert_logo" width="16%" height="90" id="Main_logo" style="background-color: #8090AB; display:block;" /></a>
+  
+  <div id="menu-container">
+    <ul id="navigationMenu">
+     <li><a href="Final.html" class="normalMenu">Home</a></li>
+      <li><a href="HTML.html" class="selectedMenu">HTML</a></li>
+      <li><a href="CSS.html" class="normalMenu">CSS</a></li>
+      <li><a href="Scripts.html" class="normalMenu">The Scripts</a></li>
+  </ul>
+  </div>
+  <!-- end .header --></div>
+  <div class="sidebar1">
+    <ul class="nav">
+      <li><a href="#"><strong>HTML?</strong>
+      	<span>&rarr; HTML stands for Hyper Text Mark-up Language, and is one of many mark-up languages being used.  It contains tags and plain text, which it uses to describe the content inside of a document. </span></a></li>
+      <li><a href="#"><strong>HTML5</strong>
+      	<span>&rarr; HTML 5 will be the new standard in the near future, however is still a work in progress. HTML 5 also reduces for exernal plug-ins(such as Flash), and has more mark-up to replace scripting and better error handling. </span></a></li>
+        
+      <li><a href="#"><strong>XHTML</strong>
+      	<span>&rarr; XHTML, E<strong>X</strong>tenxible <strong>H</strong>yperText <strong>M</strong>arkup <strong>L</strong>anguage, is a stricter and cleaner version of HTML 4.01, and is defined as an XML application. Also, it is supported by all major browsers.</span></a></li>
+        
+        <li class="nav2"><a href="#"><strong>Did You Know?</strong>
+      	<span>  &rarr; The DOCTYPE declaration defines the document type </br>
+         The text between &lt;html&gt; and &lt;/html&gt; describe the web page.</br>
+         The text between &lt;body&gt; and &lt;/body&gt; is the visible page content.</br>
+         The text between &lt;h1&gt; and &lt;/h1&gt; is displayed as a heading.</br>
+         The text between &lt;div&gt; and &lt;/div&gt; is a division within the page. </br>
+         The text between &lt;p&gt; and &lt;/p&gt; is displayed as a paragraph.
+          </span></a></li>
+    </ul>
+    <div id="head">
+    <p class="fromScratch">
+    <strong>Remember to:</strong>
+    </p>
+    <p >
+     //declare the html type 
+     </p>
+     <p class="fromScratchHead">
+     //include the html and head tags </p>
+     <p>
+     //add the meta character set and title </p>
+     <p>
+     //finally include the css and JS/Jquery 
+        
+     </p>
+     <p>
+    //Create the body by inputing the body tag </p>
+    </div>
+    <div id="someBody">
+    
+    <p>
+     //type up some content 
+     
+    </p><br> <br><br>
+    <p>
+    //finish up the html doc with closing tags
+    </p>
+    </div>
+    
+  <!-- end .sidebar1 --></div>
+  <div class="content">
+    <h1>The HTML</h1>
+    <p> This page will cover things concerning the HTML portion of Dreamweaver, including how to properly set up a page from the start. The majority of this portion of the tutorial will be based on the Code and Splitscreen views, with a video covering the Design option.</p>
+    
+    
+    <h2>What Happens Next?</h2>
+    <p>To start off with, first select File | New, then proceed to create a new HTML file. Since this will be our first page, we will choose to create a new CSS as well. <a href="CSS.html">More on CSS creation in the next page</a>. </p>
+    <p>
+    When first opening a new HTML document there is only going to be a few codes on there: a skeleton to start your masterpiece. Automatically, Dreamweaver will include the document type, which in this instance is HTML 5; as well as the meta character-set, title, and body tags.
+    <p>
+    <div id="htmlCode"><p><pre><code>
+    &lt;!DOCTYPE HTML&gt; 		
+    &lt;html&gt;			
+    &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;	
+    &lt;title&gt;Untitled Document&lt;/title&gt;
+    &lt;/head&gt;
+    
+    
+    &lt;body&gt;    
+    &lt;/body&gt;
+    &lt;/html&gt;  
+    </code></pre></p></div>
+    
+    <h2 id="htmlHead">Setting Up The Head</h2>
+    <p>
+    Alright, so we have a fresh page waiting to be coded. Next, we are going to rename the title and include any CSS, Javascript, or any other files that we would like to be included as part of the page.  Also, here is where we can include any style or scripts that we would to pretain to this page only.
+    </p>
+    
+    <div id="htmlCode"><p><pre><code>
+    &lt;!DOCTYPE HTML&gt; 		
+    &lt;html&gt;			
+    &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;	
+    &lt;title&gt;Sample&lt;/title&gt;
+    &lt;link href="some.css"&gt;	
+    &lt;script type="text/javascript" src="some/scripts.js">&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;    
+    	
+     
+    </code></pre></p></div>
+    <h2 id="cssBody">Modifying the Body</h2>
+    <p >
+    Finally, we'll add some code to the body, so that when we load the page, it will show some text. To begin, set up div tags and nest some paragraphs within it.  For later use with CSS and Javascript, add class and id attributes to the tags so that they can provide additional information to the content. Along side this example will be the Design portion.
+    </p>
+    <iframe id="youtubeHTML" width="420" height="315" src="http://www.youtube.com/embed/unRDCb7jadQ" frameborder="0" allowfullscreen></iframe>
+    <div id="htmlCode"><p><pre><code>
+    
+    &lt;body&gt;    
+      &lt;div class="content"&gt;
+      &lt;h1&gt; The Header &lt;/h1&gt;
+        &lt;p&gt; Some Text &lt;/p&gt;
+         &lt;/div&gt;
+      &lt;div id="footer"&gt; 
+      	&lt;p&gt;This is the footer&lt;p&gt;
+       &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;  
+    </code></pre></p></div>
+    
+    
+   <h3>Conclusion</h3>
+   <p>
+   Before we move onto the next portion of the tutorial, be sure so save your work. Also, we will be creating a site so that when we link other pages and files, it will be found in the same folder. To create a site it can be found under Site | New. More instructions on site can be found <a href="Sites.html">here</a>.
+   </p>
+   
+    
+    <!-- end .content --></div>
+  <div class="footer">
+   <p><a href="Dreamweaver.html">Dreamweaver CS 6</a> | <a href="About.html">About</a> | <a href="Sources.html">Extras</a> | <a href="Site_map.html">Site Map</a></p>
+    <!-- end .footer --></div>
+<!-- end .container --></div>
+
+<div id="toTop">^ Back to Top</div>
+
+</body>
+</html>
